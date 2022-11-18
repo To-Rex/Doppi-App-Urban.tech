@@ -754,7 +754,6 @@ class _ProductPageState extends State<ProductPage>
                             )),
                       ),
                     ),
-
                     for (var j = 0; j < product.length; j++)
                       if (product[j]['category'] == iid[i])
                         Column(
@@ -767,15 +766,64 @@ class _ProductPageState extends State<ProductPage>
                                       return AlertDialog(
                                         title: Column(
                                           children: [
-                                            Text(product[j]['name']),
-                                            const SizedBox(
-                                              height: 50,
+                                            Image.network(
+                                              product[j]['photo'],
+                                              height: 200,
+                                              width: 200,
                                             ),
-                                            Text(product[j]['time']),
+                                            SizedBox(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height* 0.01,
+                                            ),
+                                            Text(product[j]['name']),
+                                            SizedBox(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height /
+                                                  40,
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: Colors.black,
+                                                    width: 1),
+                                                borderRadius:
+                                                BorderRadius.circular(
+                                                    15),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  const Icon(
+                                                    Icons
+                                                        .access_time_rounded,
+                                                    color: Colors.black,
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 30,
+                                                    width: 6,
+                                                  ),
+                                                  Text(
+                                                    product[j]['time']
+                                                        .toString(),
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  //delete icons
+                                                ],
+                                              ),
+                                            ),
                                             const SizedBox(
                                               height: 10,
                                             ),
-                                            Text(product[j]['category']),
+                                            Text(product[j]['price']),
                                           ],
                                         ),
                                       );

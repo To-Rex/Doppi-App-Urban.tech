@@ -754,18 +754,6 @@ class _ProductPageState extends State<ProductPage>
                             )),
                       ),
                     ),
-                    if (product.length == false)
-                      Center(
-                        child: Text("No Products"),
-                      ),
-                    Center(
-                      child: Text("No Products"),
-                    ),Center(
-                      child: Text("No Products"),
-                    ),Center(
-                      child: Text("No Products"),
-                    ),
-
 
                     for (var j = 0; j < product.length; j++)
                       if (product[j]['category'] == iid[i])
@@ -915,7 +903,6 @@ class _ProductPageState extends State<ProductPage>
                             ),
                           ],
                         ),
-
                   ],
                 ),
               ),

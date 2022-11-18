@@ -803,7 +803,10 @@ class _ProductPageState extends State<ProductPage>
                                                 MainAxisAlignment.center,
                                             children: [
                                               SizedBox(
-                                                width: MediaQuery.of(context).size.width * 0.009,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.009,
                                               ),
                                               IconButton(
                                                 onPressed: () {},
@@ -815,7 +818,10 @@ class _ProductPageState extends State<ProductPage>
                                                 ),
                                               ),
                                               SizedBox(
-                                                width: MediaQuery.of(context).size.width * 0.009,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.009,
                                               ),
                                               Column(
                                                 mainAxisAlignment:
@@ -893,7 +899,10 @@ class _ProductPageState extends State<ProductPage>
                                                 icon: const Icon(Icons.edit),
                                               ),
                                               SizedBox(
-                                                width: MediaQuery.of(context).size.width * 0.009,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.009,
                                               ),
                                             ],
                                           ),

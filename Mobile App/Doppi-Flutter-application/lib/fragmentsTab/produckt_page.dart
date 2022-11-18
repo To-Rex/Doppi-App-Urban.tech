@@ -754,164 +754,168 @@ class _ProductPageState extends State<ProductPage>
                             )),
                       ),
                     ),
-                    if (iid.isEmpty)
-                      Column(
-                        children: const [
-                          Text('No Category'),
-                        ],
+                    if (product.length == false)
+                      Center(
+                        child: Text("No Products"),
                       ),
-                    if (iid.isNotEmpty)
-                      for (var j = 0; j < product.length; j++)
-                        if (product[j]['category'] == iid[i])
-                          Column(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return AlertDialog(
-                                          title: Column(
-                                            children: [
-                                              Text(product[j]['name']),
-                                              const SizedBox(
-                                                height: 50,
-                                              ),
-                                              Text(product[j]['time']),
-                                              const SizedBox(
-                                                height: 10,
-                                              ),
-                                              Text(product[j]['category']),
-                                            ],
-                                          ),
-                                        );
-                                      });
-                                },
-                                child: Card(
-                                  shadowColor: Colors.black,
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: SizedBox(
-                                        height: 70,
-                                        child: Center(
-                                          //child add icon for category
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              SizedBox(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.009,
-                                              ),
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: Image.network(
-                                                  product[j]['photo'],
-                                                  //'https://www.pngitem.com/pimgs/m/31-317029_listtodo-flutter-examples-hd-png-download.png',
-                                                  height: 35,
-                                                  width: 35,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.009,
-                                              ),
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(product[j]['name']),
-                                                  Text(product[j]['price']),
-                                                ],
-                                              ),
-                                              Expanded(child: Container()),
-                                              Column(
-                                                children: [
-                                                  SizedBox(
-                                                    height:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .height *
-                                                            0.006,
-                                                  ),
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Colors.black,
-                                                          width: 1),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        const SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                        const Icon(
-                                                          Icons
-                                                              .access_time_rounded,
-                                                          color: Colors.black,
-                                                        ),
-                                                        const SizedBox(
-                                                          height: 30,
-                                                          width: 6,
-                                                        ),
-                                                        Text(
-                                                          product[j]['time']
-                                                              .toString(),
-                                                          style:
-                                                              const TextStyle(
-                                                            color: Colors.black,
-                                                          ),
-                                                        ),
-                                                        const SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                        //delete icons
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.02,
-                                              ),
-                                              IconButton(
-                                                onPressed: () {
-                                                  //popup
-                                                  _showDialog1(
-                                                      product[j]['_id'],
-                                                      product[j]['name']);
-                                                },
-                                                icon: const Icon(Icons.edit),
-                                              ),
-                                              SizedBox(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.009,
-                                              ),
-                                            ],
-                                          ),
+                    Center(
+                      child: Text("No Products"),
+                    ),Center(
+                      child: Text("No Products"),
+                    ),Center(
+                      child: Text("No Products"),
+                    ),
+
+
+                    for (var j = 0; j < product.length; j++)
+                      if (product[j]['category'] == iid[i])
+                        Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Column(
+                                          children: [
+                                            Text(product[j]['name']),
+                                            const SizedBox(
+                                              height: 50,
+                                            ),
+                                            Text(product[j]['time']),
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(product[j]['category']),
+                                          ],
                                         ),
-                                      )),
-                                ),
+                                      );
+                                    });
+                              },
+                              child: Card(
+                                shadowColor: Colors.black,
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: SizedBox(
+                                      height: 70,
+                                      child: Center(
+                                        //child add icon for category
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.009,
+                                            ),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: Image.network(
+                                                product[j]['photo'],
+                                                //'https://www.pngitem.com/pimgs/m/31-317029_listtodo-flutter-examples-hd-png-download.png',
+                                                height: 35,
+                                                width: 35,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.009,
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(product[j]['name']),
+                                                Text(product[j]['price']),
+                                              ],
+                                            ),
+                                            Expanded(child: Container()),
+                                            Column(
+                                              children: [
+                                                SizedBox(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.006,
+                                                ),
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                    border: Border.all(
+                                                        color: Colors.black,
+                                                        width: 1),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                  ),
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      const Icon(
+                                                        Icons
+                                                            .access_time_rounded,
+                                                        color: Colors.black,
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 30,
+                                                        width: 6,
+                                                      ),
+                                                      Text(
+                                                        product[j]['time']
+                                                            .toString(),
+                                                        style: const TextStyle(
+                                                          color: Colors.black,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      //delete icons
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.02,
+                                            ),
+                                            IconButton(
+                                              onPressed: () {
+                                                //popup
+                                                _showDialog1(product[j]['_id'],
+                                                    product[j]['name']);
+                                              },
+                                              icon: const Icon(Icons.edit),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.009,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
+                        ),
+
                   ],
                 ),
               ),

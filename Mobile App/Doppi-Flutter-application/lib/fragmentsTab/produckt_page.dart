@@ -740,10 +740,7 @@ class _ProductPageState extends State<ProductPage>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     IconButton(
-                                      //Add product
-                                      onPressed: () {
-                                        _showDialog1(iid[i], name[i]);
-                                      },
+                                      onPressed: () {},
                                       icon: SvgPicture.asset(
                                         'assets/svgs/bottab1.svg',
                                         height: 35,
@@ -767,107 +764,141 @@ class _ProductPageState extends State<ProductPage>
                       for (var j = 0; j < product.length; j++)
                         if (product[j]['category'] == iid[i])
                           Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Card(
-                                shadowColor: Colors.black,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  child: ListTile(
-                                    onTap: () {
-                                      showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              title: Column(
+                              GestureDetector(
+                                onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Column(
+                                            children: [
+                                              Text(product[j]['name']),
+                                              const SizedBox(
+                                                height: 50,
+                                              ),
+                                              Text(product[j]['time']),
+                                              const SizedBox(
+                                                height: 10,
+                                              ),
+                                              Text(product[j]['category']),
+                                            ],
+                                          ),
+                                        );
+                                      });
+                                },
+                                child: Card(
+                                  shadowColor: Colors.black,
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: SizedBox(
+                                        height: 70,
+                                        child: Center(
+                                          //child add icon for category
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              SizedBox(
+                                                width: MediaQuery.of(context).size.width * 0.009,
+                                              ),
+                                              IconButton(
+                                                onPressed: () {},
+                                                icon: Image.network(
+                                                  product[j]['photo'],
+                                                  //'https://www.pngitem.com/pimgs/m/31-317029_listtodo-flutter-examples-hd-png-download.png',
+                                                  height: 35,
+                                                  width: 35,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: MediaQuery.of(context).size.width * 0.009,
+                                              ),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(product[j]['name']),
-                                                  const SizedBox(
-                                                    height: 50,
-                                                  ),
-                                                  Text(product[j]['time']),
-                                                  const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(product[j]['category']),
+                                                  Text(product[j]['price']),
                                                 ],
                                               ),
-                                            );
-                                          });
-                                    },
-                                    title: Text(product[j]['name'],
-                                        style: const TextStyle(
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold)),
-                                    subtitle: Text(product[j]['price'],
-                                        style: const TextStyle(
-                                            color: Colors.black, fontSize: 15)),
-                                    trailing: SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.4,
-                                      child: Row(
-                                        children: [
-                                          Expanded(child: Container()),
-                                          Column(
-                                            children: [
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(
-                                                      width: 10,
+                                              Expanded(child: Container()),
+                                              Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.006,
+                                                  ),
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color: Colors.black,
+                                                          width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
                                                     ),
-                                                    const Icon(
-                                                      Icons.access_time_rounded,
-                                                      color: Colors.black,
+                                                    child: Row(
+                                                      children: [
+                                                        const SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        const Icon(
+                                                          Icons
+                                                              .access_time_rounded,
+                                                          color: Colors.black,
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 30,
+                                                          width: 6,
+                                                        ),
+                                                        Text(
+                                                          product[j]['time']
+                                                              .toString(),
+                                                          style:
+                                                              const TextStyle(
+                                                            color: Colors.black,
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        //delete icons
+                                                      ],
                                                     ),
-                                                    const SizedBox(
-                                                      height: 30,
-                                                      width: 6,
-                                                    ),
-                                                    Text(
-                                                      product[j]['time']
-                                                          .toString(),
-                                                      style: const TextStyle(
-                                                        color: Colors.black,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    //delete icons
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.02,
+                                              ),
+                                              IconButton(
+                                                onPressed: () {
+                                                  //popup
+                                                  _showDialog1(
+                                                      product[j]['_id'],
+                                                      product[j]['name']);
+                                                },
+                                                icon: const Icon(Icons.edit),
+                                              ),
+                                              SizedBox(
+                                                width: MediaQuery.of(context).size.width * 0.009,
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.02,
-                                          ),
-                                          IconButton(
-                                            onPressed: () {
-                                              //popup
-                                              _showDialog1(product[j]['_id'],
-                                                  product[j]['name']);
-                                            },
-                                            icon: const Icon(Icons.edit),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
+                                        ),
+                                      )),
                                 ),
                               ),
                             ],

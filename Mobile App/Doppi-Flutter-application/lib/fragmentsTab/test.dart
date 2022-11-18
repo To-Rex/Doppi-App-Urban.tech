@@ -23,15 +23,15 @@ class _ProductPageState extends State<ProductPage>
   late final TextEditingController _productController = TextEditingController();
 
   late final TextEditingController _productNameController =
-  TextEditingController();
+      TextEditingController();
   late final TextEditingController _productPriceController =
-  TextEditingController();
+      TextEditingController();
   late final TextEditingController _productTimeController =
-  TextEditingController();
+      TextEditingController();
   late final TextEditingController _productWeightController =
-  TextEditingController();
+      TextEditingController();
   late final TextEditingController _productStatusController =
-  TextEditingController();
+      TextEditingController();
 
   var token = '';
   var name = [];
@@ -172,7 +172,7 @@ class _ProductPageState extends State<ProductPage>
           return AlertDialog(
             title: const Text("Delete Category"),
             content:
-            const Text("Are you sure you want to delete this category?"),
+                const Text("Are you sure you want to delete this category?"),
             actions: [
               TextButton(
                 child: const Text("Yes"),
@@ -297,7 +297,7 @@ class _ProductPageState extends State<ProductPage>
           return AlertDialog(
             title: const Text("Update Category or Delete"),
             content:
-            const Text("Do you want to update or delete this category?"),
+                const Text("Do you want to update or delete this category?"),
             actions: [
               TextButton(
                 child: const Text("Delete"),
@@ -332,7 +332,7 @@ class _ProductPageState extends State<ProductPage>
           return AlertDialog(
             title: const Text("Delete Category"),
             content:
-            const Text("Are you sure you want to delete this category?"),
+                const Text("Are you sure you want to delete this category?"),
             actions: [
               TextButton(
                 child: const Text("Yes"),
@@ -376,7 +376,7 @@ class _ProductPageState extends State<ProductPage>
           return AlertDialog(
             title: const Text("Update Category"),
             content:
-            const Text("Are you sure you want to update this category?"),
+                const Text("Are you sure you want to update this category?"),
             actions: [
               TextButton(
                 child: const Text("Yes"),
@@ -819,7 +819,7 @@ class _ProductPageState extends State<ProductPage>
                                                       color: Colors.black,
                                                       width: 1),
                                                   borderRadius:
-                                                  BorderRadius.circular(15),
+                                                      BorderRadius.circular(15),
                                                 ),
                                                 child: Row(
                                                   children: [
@@ -852,8 +852,8 @@ class _ProductPageState extends State<ProductPage>
                                           ),
                                           SizedBox(
                                             width: MediaQuery.of(context)
-                                                .size
-                                                .width *
+                                                    .size
+                                                    .width *
                                                 0.02,
                                           ),
                                           IconButton(

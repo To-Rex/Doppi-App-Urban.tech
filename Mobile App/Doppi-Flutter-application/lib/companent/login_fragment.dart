@@ -25,7 +25,7 @@ class _LoginFragmentState extends State<LoginFragment> {
         'password': _passwordController.text,
       },
     );
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200||response.statusCode == 201) {
       var jwttoken = response.body.split("token\":\"")[1].split("\"}")[0];
       //var jwt = JwtDecoder.decode(jwttoken);
       SharedPreferences prefs = await SharedPreferences.getInstance();

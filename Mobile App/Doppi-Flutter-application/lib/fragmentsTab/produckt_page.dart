@@ -563,6 +563,7 @@ class _ProductPageState extends State<ProductPage>
                           margin: const EdgeInsets.only(top: 10),
                           child: TextButton(
                             onPressed: () {
+                              //clear list get data
                               addProduct(id);
                               Navigator.pop(context);
                             },
